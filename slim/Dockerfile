@@ -1,5 +1,5 @@
 FROM alpine:3.4
 
-RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories
+ENV NODE_VERSION=6.3.1-r0
 
-RUN apk --update add --no-cache nodejs
+RUN apk add nodejs=$NODE_VERSION --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main
